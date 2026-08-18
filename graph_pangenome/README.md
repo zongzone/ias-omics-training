@@ -1,6 +1,5 @@
 # Pangenome graph construction:
 
-These scripts are designed to be run directly with `bash`, without `sbatch`.
 
 Important resource note
 -----------------------
