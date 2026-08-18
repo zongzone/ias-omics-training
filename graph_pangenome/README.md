@@ -28,7 +28,7 @@ All scripts are run directly with `bash`; no `sbatch` wrapper is included.
 
 ## 1. Minigraph
 
-**Script:** `01_minigraph_direct.sh`
+**Script:** `01_minigraph.sh`
 
 ### Input
 
@@ -45,7 +45,7 @@ The reference genome is supplied separately and should not be repeated in `assem
 ### Run
 
 ```bash
-bash 01_minigraph_direct.sh \
+bash 01_minigraph.sh \
     reference.fa \
     assemblies.list \
     graph.gfa \
@@ -63,7 +63,7 @@ graph.gfa
 
 ## 2. Minigraph-Cactus
 
-**Script:** `02_cactus_pangenome_direct.sh`
+**Script:** `02_cactus_pangenome.sh`
 
 ### Input
 
@@ -84,7 +84,7 @@ The reference name supplied to the script must exactly match the reference sampl
 Example for a large mammalian pangenome:
 
 ```bash
-bash 02_cactus_pangenome_direct.sh \
+bash 02_cactus_pangenome.sh \
     seqfile.txt \
     REF \
     cattle_pg \
@@ -107,7 +107,7 @@ VCF
 To additionally generate Giraffe indexes:
 
 ```bash
-bash 02_cactus_pangenome_direct.sh \
+bash 02_cactus_pangenome.sh \
     seqfile.txt \
     REF \
     cattle_pg \
@@ -143,7 +143,7 @@ These stage-specific memory overrides should only be set when needed.
 
 ## 3. PGGB
 
-**Script:** `03_pggb_partition_direct.sh`
+**Script:** `03_pggb.sh`
 
 For large mammalian whole-genome assemblies, PGGB is **partitioned first** rather than running all chromosomes together.
 
@@ -166,7 +166,7 @@ PanSN-style sequence names are strongly recommended.
 ### Run
 
 ```bash
-bash 03_pggb_partition_direct.sh \
+bash 03_pggb.sh \
     all_assemblies.fa.gz \
     pggb_out \
     --threads 32 \
@@ -206,7 +206,7 @@ Community/chromosome jobs are executed **sequentially** in this direct-run scrip
 
 ## 4. VG
 
-**Script:** `04_vg_from_vcf_direct.sh`
+**Script:** `04_vg.sh`
 
 VG is run directly on the whole reference genome and VCF; this workflow does **not** manually split chromosomes.
 
@@ -222,7 +222,7 @@ The VCF must be bgzip-compressed. If the tabix index is absent, the script creat
 ### Run
 
 ```bash
-bash 04_vg_from_vcf_direct.sh \
+bash 04_vg.sh \
     reference.fa \
     variants.vcf.gz \
     graph.vg \
@@ -240,7 +240,7 @@ vg construct -S
 If the VCF contains only SNPs/indels and SV handling is not required:
 
 ```bash
-bash 04_vg_from_vcf_direct.sh \
+bash 04_vg.sh \
     reference.fa \
     variants.vcf.gz \
     graph.vg \
