@@ -1,6 +1,6 @@
 # Pangenome Graph Construction
 
-Four direct-run workflows for pangenome graph construction:
+Four workflows for pangenome graph construction:
 
 1. **Minigraph** — reference-guided incremental graph construction
 2. **Minigraph-Cactus** — whole-genome pangenome alignment and graph construction
@@ -261,10 +261,10 @@ graph.gfa    # when --gfa is specified
 ## Recommended directory layout
 
 ```text
-pangenome_graph_codes/
-├── 01_minigraph_direct.sh
-├── 02_cactus_pangenome_direct.sh
-├── 03_pggb_partition_direct.sh
-├── 04_vg_from_vcf_direct.sh
+graph_pangenome/
+├── 01_minigraph.sh
+├── 02_cactus_pangenome.sh
+├── 03_pggb_partition.sh
+├── 04_vg.sh
 └── README.md
 ```
