@@ -61,7 +61,7 @@ graph.gfa
 
 ---
 
-## 2. Minigraph-Cactus
+## 2. Cactus-pangenome
 
 **Script:** `02_cactus_pangenome.sh`
 
